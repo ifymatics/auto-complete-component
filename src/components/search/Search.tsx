@@ -5,9 +5,13 @@ interface SearchProp {
   value: string;
   setSearchValue: (value: string) => void;
 
-  showSuggestions: (value: boolean) => void;
+  handleSearchInputFocus: (value: boolean) => void;
 }
-const Search: FC<SearchProp> = ({ showSuggestions, setSearchValue, value }) => {
+const Search: FC<SearchProp> = ({
+  handleSearchInputFocus,
+  setSearchValue,
+  value,
+}) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value.trim());
   };
@@ -19,7 +23,7 @@ const Search: FC<SearchProp> = ({ showSuggestions, setSearchValue, value }) => {
         value={value}
         placeholder="Search"
         onChange={handleChange}
-        onFocus={() => showSuggestions(true)}
+        onFocus={() => handleSearchInputFocus(true)}
       />
     </div>
   );

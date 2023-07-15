@@ -4,14 +4,14 @@ import Search from "./Search";
 
 describe("Search", () => {
   const setSearchValue = jest.fn();
-  const showSuggestions = jest.fn();
+  const handleSearchInputFocus = jest.fn();
   const value = "example value";
 
   it("should render the search input", () => {
     render(
       <Search
         setSearchValue={setSearchValue}
-        showSuggestions={showSuggestions}
+        handleSearchInputFocus={handleSearchInputFocus}
         value={value}
       />
     );
@@ -24,7 +24,7 @@ describe("Search", () => {
     render(
       <Search
         setSearchValue={setSearchValue}
-        showSuggestions={showSuggestions}
+        handleSearchInputFocus={handleSearchInputFocus}
         value={value}
       />
     );
@@ -38,12 +38,12 @@ describe("Search", () => {
     render(
       <Search
         setSearchValue={setSearchValue}
-        showSuggestions={showSuggestions}
+        handleSearchInputFocus={handleSearchInputFocus}
         value={value}
       />
     );
     const searchInput = screen.getByRole("textbox");
     fireEvent.focus(searchInput);
-    expect(showSuggestions).toHaveBeenCalledWith(true);
+    expect(handleSearchInputFocus).toHaveBeenCalledWith(true);
   });
 });
