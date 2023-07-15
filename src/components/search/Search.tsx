@@ -7,13 +7,16 @@ interface SearchProp {
 
   handleSearchInputFocus: (value: boolean) => void;
 }
+
 const Search: FC<SearchProp> = ({
   handleSearchInputFocus,
   setSearchValue,
   value,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value.trim());
+    const inputText = event.target.value.trim();
+
+    setSearchValue(inputText);
   };
   return (
     <div className={styles.search}>
