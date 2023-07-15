@@ -24,3 +24,13 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+### Available instruction on how to get data source
+
+### `npm run server` this is used to start a json-server
+
+Copy http://localhost:3005/cityNames as the backend url.\
+
+The url will server as the backend url for fetching list of city names.\
+Some code that will help to fetch data from the json-server in App.ts were commented.\
+You may use the mockData.json as your data source, so there would be no need of running the json-server if you choose to do so.
